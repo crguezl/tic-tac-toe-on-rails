@@ -1,0 +1,25 @@
+
+drag_id = "#{params[:id]}"
+drop_id = "#{params[:drop_zone]}"
+append_child_js = '$("' + drop_id + '").appendChild($("' + drag_id + '"));'
+drop_remove_js = 'Droppables.remove("' + drag_id + '");'
+
+
+page[drag_id].revert = false;
+page << append_child_js
+page << drop_remove_js
+
+page[:status_message].replace_html "Game over. You have won!!!"
+page[:status_message].visual_effect :highlight
+page[:status_message].remove_class_name "statusMessageNormal"
+page[:status_message].add_class_name "statusMessageFinalNotice"
+
+page[:total_games_played].replace_html "#{@game.player_x.get_total_games_played}"
+page[:total_games_played].visual_effect :highlight
+
+page[:total_wins].replace_html "#{@game.player_x.get_total_games_won}"
+page[:total_wins].visual_effect :highlight
+
+page[:play_again].toggle
+page[:play_again].visual_effect :highlight
+

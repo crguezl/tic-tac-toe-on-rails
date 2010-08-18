@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  title: player x
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+two:
+  id: 2
+  title: player o
+  created_on: 2007-12-12
+  updated_on: 2007-12-12

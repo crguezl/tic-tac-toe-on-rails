@@ -1,0 +1,22 @@
+# no svn files or dirs
+.svn
+
+# nothing that ends with ~
+*.*~
+
+# no mac files
+.DS_Store
+
+# no autotest
+.autotest
+
+# no database config files, heroku handles it
+config/database.yml
+config/database.yml.*
+db/schema.rb
+
+# no reason to upload files in log dir
+log/*.log
+
+# no tmp dir
+tmp/*

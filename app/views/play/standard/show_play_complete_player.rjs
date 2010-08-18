@@ -1,0 +1,26 @@
+drag_id = "#{params[:id]}"
+drop_id = "#{params[:drop_zone]}"
+append_child_js = '$("' + drop_id + '").appendChild($("' + drag_id + '"));'
+drop_remove_js = 'Droppables.remove("' + drag_id + '");'
+call_back_for_application_move_js = 'setTimeout("doOnApplicationMove();", 2000);'
+
+=begin
+// generates javascript like the following
+$("X_02").revert = false;
+$("drop_0_1").appendChild($("X_02"));
+Droppables.remove("X_02");
+$("status_message").update("nice move, now it's my turn");
+$("status_message").visualEffect("highlight");
+$("status_message").removeClassName("statusMessageNormal");
+$("status_message").addClassName("statusMessageChanged");
+setTimeout("doOnApplicationMove();", 2000);
+=end
+page[drag_id].revert = false;
+page << append_child_js
+page << drop_remove_js
+
+page[:status_message].replace_html "Nice move, now it's my turn"
+page[:status_message].visual_effect :highlight
+page[:status_message].remove_class_name "statusMessageNormal"
+page[:status_message].add_class_name "statusMessageChanged"
+page << call_back_for_application_move_js

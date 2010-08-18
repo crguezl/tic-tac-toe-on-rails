@@ -1,0 +1,23 @@
+drag_id = "#{params[:id]}"
+drop_id = "#{params[:drop_zone]}"
+append_child_js = '$("' + drop_id + '").appendChild($("' + drag_id + '"));'
+drop_remove_js = 'Droppables.remove("' + drag_id + '");'
+call_back_for_application_move_js = 'setTimeout("doOnApplicationMove();", 2000);'
+
+page[drag_id].revert = false;
+page << append_child_js
+page << drop_remove_js
+
+page[:status_message].replace_html "Game over. We have equalized!"
+page[:status_message].visual_effect :highlight
+page[:status_message].remove_class_name "statusMessageNormal"
+page[:status_message].add_class_name "statusMessageFinalNotice"
+
+page[:total_games_played].replace_html "#{@game.player_x.get_total_games_played}"
+page[:total_games_played].visual_effect :highlight
+
+page[:total_equal].replace_html "#{@game.player_x.get_total_games_equalized}"
+page[:total_equal].visual_effect :highlight
+
+page[:play_again].toggle
+page[:play_again].visual_effect :highlight

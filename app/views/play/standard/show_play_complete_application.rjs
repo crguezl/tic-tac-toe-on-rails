@@ -1,0 +1,19 @@
+
+# O_01 - O_04
+drag_id = "O_0#{get_drag_index.to_s}"
+# format is drop_{y}_{x} drop_0_1
+drop_id = "drop_#{@game.moves[-1].y_axis}_#{@game.moves[-1].x_axis}"
+
+append_child_js = '$("' + drop_id + '").appendChild($("' + drag_id + '"));'
+drop_remove_js = 'Droppables.remove("' + drag_id + '");'
+
+page[drag_id].revert = false;
+page << append_child_js
+page << drop_remove_js
+page[:status_message].replace_html "How do you like that move? Now it's your turn"
+page[:status_message].visual_effect :highlight
+page[:status_message].remove_class_name "statusMessageChanged"
+page[:status_message].add_class_name "statusMessageNormal"			
+
+#page.alert "#{@game.moves[-1].y_axis}, #{@game.moves[-1].x_axis}"
+#page.alert "play on - application move complete"

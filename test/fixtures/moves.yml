@@ -1,0 +1,28 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  title: Move 1 (0,0)
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_id: 1 # x
+  x_axis: 0
+  y_axis: 0
+  game_id: 1
+two:
+  id: 2
+  title: Move 2 (0,0)
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_id: 1 # x
+  x_axis: 0
+  y_axis: 0
+  game_id: 1
+three:
+  id: 3
+  title: Move 3 (0,0)
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_id: 1 # x
+  x_axis: 0
+  y_axis: 0
+  game_id: 4

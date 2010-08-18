@@ -1,0 +1,23 @@
+
+# O_01 - O_04
+drag_id = "O_0#{get_drag_index.to_s}"
+# format is drop_{y}_{x} drop_0_1
+drop_id = "drop_#{@game.moves[-1].y_axis}_#{@game.moves[-1].x_axis}"
+
+append_child_js = '$("' + drop_id + '").appendChild($("' + drag_id + '"));'
+drop_remove_js = 'Droppables.remove("' + drag_id + '");'
+
+page[drag_id].revert = false;
+page << append_child_js
+page << drop_remove_js
+page[:status_message].replace_html "Game over. I win!!!"
+page[:status_message].visual_effect :highlight
+page[:status_message].remove_class_name "statusMessageChanged"
+page[:status_message].add_class_name "statusMessageFinalNotice"	
+
+
+page[:total_games_played].replace_html "#{@game.player_x.get_total_games_played}"
+page[:total_games_played].visual_effect :highlight
+
+page[:play_again].toggle
+page[:play_again].visual_effect :highlight

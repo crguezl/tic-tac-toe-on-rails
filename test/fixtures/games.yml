@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  title: Test Game 1
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_x_id: 1
+  player_o_id: 2
+two:
+  id: 2
+  title: Test Game 2
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_x_id: 1
+  player_o_id: 2
+three:
+  id: 3
+  title: Test Game 3
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_x_id: 1
+  player_o_id: 2
+four:
+  id: 4
+  title: Test Game 4
+  created_on: 2007-12-12
+  updated_on: 2007-12-12
+  player_x_id: 1
+  player_o_id: 2
