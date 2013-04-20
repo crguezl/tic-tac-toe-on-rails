@@ -4,6 +4,9 @@
 # nothing that ends with ~
 *.*~
 
+# rubinious
+.rbx
+
 # no mac files
 .DS_Store
 
