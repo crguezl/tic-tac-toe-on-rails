@@ -1,0 +1,12 @@
+My first rails app - just a toy created back in 2007
+
+Tic Tac Toe on Rails - http://www.tictactoeonrails.com/
+
+Change Log
+=======================================================
+Release     Version   Comments
+-------------------------------------------------------
+2013.04.20  0.4.0     upgrade to rails 3.2.13 rbx puma
+2010.08.17  0.3.0     now use postgres and deploy on heroku
+2007.10.21  0.2.0     init
+
