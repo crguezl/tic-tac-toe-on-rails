@@ -16,8 +16,14 @@
 				<div id="stats-content">
 					<span class="label">Total Games Played:</span>&nbsp;<span id="total_games_played" class="data"><%=@current_user.get_total_games_played - 1 %></span>
 					<span class="label">wins:</span>&nbsp;<span id="total_wins" class="data"><%=@current_user.get_total_games_won %></span>
-					<span class="label">losses:</span>&nbsp;<span id="total_loses" class="data"><%=@current_user.get_total_games_lost %></span>
-					<span class="label">equalizers:</span>&nbsp;<span id="total_equal" class="data"><%=@current_user.get_total_games_equalized %></span>
+          <span class="label">losses:</span>&nbsp;<span id="total_loses" class="data">
+            <%=
+              #@current_user.get_total_games_lost 
+            %></span>
+          <span class="label">equalizers:</span>&nbsp;<span id="total_equal" class="data">
+            <%=
+              #@current_user.get_total_games_equalized 
+            %></span>
 				</div>
 				&nbsp;
 			</div>

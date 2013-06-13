@@ -1,27 +1,34 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3", :engine => "rbx", :engine_version => "2.0.0.rc1"
+#ruby "1.9.3", :engine => "rbx", :engine_version => "2.0.0.rc1"
 
-gem "puma", "~> 2.0.0.b7"
-gem 'rails', '3.2.13'
+#gem "puma", "~> 2.0.0.b7"
+gem "puma"
+#gem 'rails', '3.2.13'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+#gem 'pg'
+gem 'sqlite3', '1.3.5'
+gem 'rspec-rails', '2.11.0'
+gem 'wirble'
+gem 'interactive_editor'
+  gem 'debugger'
 
 gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails' #,   '~> 3.2.3'
+  gem 'coffee-rails' #, '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier' #, '>= 1.0.3'
 end
 
 # gem 'jquery-rails'
